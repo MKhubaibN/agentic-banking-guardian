@@ -1,0 +1,41 @@
+# secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_ed25519*
+id_rsa*
+secrets/
+*.secret
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+.coverage
+htmlcov/
+
+# data and results
+*.sqlite3
+*.db
+pgdata/
+eval/results/raw/
+*.log
+
+# node / editor / os
+node_modules/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+# Khubaib = MKhubaibN, Raja = QasimAliRaja, Talha = mysstudy194.
+# Last matching pattern wins. Each PR needs review from the owner of the folders it touches.
+*            @MKhubaibN
+/tokens/     @MKhubaibN
+/infra/      @MKhubaibN
+/.github/    @MKhubaibN
+/policy/     @QasimAliRaja
+/gateway/    @QasimAliRaja
+/bank/       @QasimAliRaja
+/eval/       @mysstudy194
+/docs/       @MKhubaibN @QasimAliRaja @mysstudy194
