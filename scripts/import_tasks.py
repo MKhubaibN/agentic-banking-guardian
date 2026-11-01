@@ -10,6 +10,7 @@ Owner must be a GitHub username. The ID is the join key: issue title = "[ID] Tit
 Re-running is safe; tasks whose "[ID]" issue already exists are skipped.
 Needs: gh CLI logged in with scopes `repo` and `project`.
 """
+
 import csv
 import json
 import subprocess
@@ -30,9 +31,24 @@ def main():
     existing = set()
     if not dry:
         issues = json.loads(
-            gh("issue", "list", "-R", repo, "--state", "all", "--limit", "500", "--json", "title")
+            gh(
+                "issue",
+                "list",
+                "-R",
+                repo,
+                "--state",
+                "all",
+                "--limit",
+                "500",
+                "--json",
+                "title",
+            )
         )
-        existing = {i["title"].split("]")[0].lstrip("[") for i in issues if i["title"].startswith("[")}
+        existing = {
+            i["title"].split("]")[0].lstrip("[")
+            for i in issues
+            if i["title"].startswith("[")
+        }
         gh("label", "create", "task", "-R", repo, "--force")
     with open(path, newline="", encoding="utf-8-sig") as f:
         rows = [
